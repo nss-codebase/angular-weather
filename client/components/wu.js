@@ -17,7 +17,12 @@
       return $http.jsonp(url);
     }
 
-    return {getConditions:getConditions, getWebcams:getWebcams};
+    function get10Day(zip){
+      var url = getUrl('forecast10day', zip);
+      return $http.jsonp(url);
+    }
+
+    return {getConditions:getConditions, getWebcams:getWebcams, get10Day:get10Day};
   }]);
 })();
 
